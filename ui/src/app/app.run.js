@@ -137,7 +137,7 @@ export default function AppRun($rootScope, $window, $injector, $location, $log, 
             }
         })
 
-        $rootScope.pageTitle = 'DIoT';
+        $rootScope.pageTitle = 'IoT';
 
         $rootScope.stateChangeSuccessHandle = $rootScope.$on('$stateChangeSuccess', function (evt, to, params) {
             if (userService.isPublic() && to.name === 'dashboard') {
@@ -146,9 +146,9 @@ export default function AppRun($rootScope, $window, $injector, $location, $log, 
             }
             if (angular.isDefined(to.data.pageTitle)) {
                 $translate(to.data.pageTitle).then(function (translation) {
-                    $rootScope.pageTitle = 'DIoT | ' + translation;
+                    $rootScope.pageTitle = 'IoT | ' + translation;
                 }, function (translationId) {
-                    $rootScope.pageTitle = 'DIoT | ' + translationId;
+                    $rootScope.pageTitle = 'IoT | ' + translationId;
                 });
             }
         })
